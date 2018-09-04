@@ -1,0 +1,503 @@
+* {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+}
+
+/*-----------------------------Desktop-----------------------------------------------------------------*/
+
+/*--------home page grid-------------------------------*/
+
+.wrapper {
+    display: grid;
+    background-image: url(../images/large/hisu-lee-86681-unsplash.jpg);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header" "main" "footer";
+}
+
+/*--------header home desktop---------*/
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto max-content;
+}
+
+
+.burger-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    padding-top: 1%;
+}
+
+
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px;
+    color: white;
+    font-style: normal;
+    font-weight: 100;
+    opacity: 0.4;
+}
+
+a:hover {
+    opacity: 1;
+}
+
+.current {
+    opacity: 0.9;
+}
+
+.burger-menu input {
+    display: none;
+}
+
+.logo {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    margin-top: 10%;
+    margin-bottom: 25%;
+    max-width: 500px;
+    opacity: 0.9;
+    justify-self: center;
+    padding: 2%;
+}
+
+.logo:hover {
+    opacity: 1;
+}
+
+/*-----------------------main grid--------*/
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 200px auto auto;
+    padding: 5%;
+}
+
+.leaves1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+h1 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    font-family: 'Amatic SC', cursive;
+    font-size: 70px;
+    align-self: center;
+    text-align: center;
+}
+
+.leaves2 {
+    grid-column: 4/6;
+    grid-row: 1/2;
+    align-self: center;
+
+}
+
+.filters {
+    grid-column: 1/6;
+    grid-row: 3/4;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+}
+
+.filters .button-filter {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    background-color: dimgray;
+
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.filters h2 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    text-align: center;
+}
+
+nav {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+
+    background-color: gray;
+}
+
+nav a {
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 40%));
+    grid-gap: 5em;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+section h2 {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    font-family: 'Amatic SC', cursive;
+    font-size: 35px;
+    text-align: center;
+    background-color: gainsboro;
+    box-shadow: 3px 3px 10px #888888;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.menugrid {
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    justify-content: center;
+
+}
+
+.dishes {
+    background-color: gainsboro;
+    box-shadow: 3px 3px 10px #888888;
+    border-radius: 0px 0px 50px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hide {
+    display: none;
+}
+
+
+.img-dishes {
+    padding: 3%;
+    grid-row: 1/2;
+    grid-column: 1/3;
+    height: 15em;
+}
+
+.img-soldout {
+    opacity: 0.3;
+}
+
+.soldout {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    z-index: 100;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align-last: center;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 10%;
+
+}
+
+
+h3 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+.vegetarian {
+    grid-column: 2/3;
+    grid-row: 2/5;
+    background-image: url(../images/large/vegetarian-mark.svg);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 90%;
+
+}
+
+.discount {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    z-index: 100;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgba(226, 73, 73);
+    background-repeat: no-repeat;
+    justify-self: flex-end;
+    align-self: flex-end;
+    padding: 2px;
+    height: 40px;
+    width: 130px;
+    margin: 20px 20px;
+
+}
+
+p {
+    grid-column: 1/3;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.stars {
+    grid-column: 1/3;
+    max-width: 50%;
+    justify-self: center;
+    padding-bottom: 5%;
+}
+
+.price {
+    grid-column: 1/3;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.dishes button {
+    grid-column: 1/3;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border: solid 1px #7a7a7a;
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: #7a7a7a;
+    border-radius: 40px;
+    margin: 0px 0px 20px 0px;
+    box-shadow: 2px 2px 5px #888888;
+    height: 50px;
+    width: 250px;
+    justify-self: center;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+/*-----------------------footer grid--------*/
+
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #563E2F;
+}
+
+footer h2 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 35px;
+    text-align: center;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    color: white;
+}
+
+.p-footer {
+    padding-bottom: 1%;
+    color: white;
+}
+
+
+
+/*---------------------------mobile--------------------------------*/
+
+@media all and (max-width:750px) {
+
+    /*------------------header-------------------------*/
+    .burger-menu #menu-toggle {
+        position: fixed;
+        display: block;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+        user-select: none;
+    }
+
+    .burger-menu input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .burger-menu span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        border: solid 1px #000;
+        background-color: gainsboro;
+        border-radius: 3px;
+        z-index: 1;
+    }
+
+    .burger-menu .burger-links {
+        position: absolute;
+        width: 280px;
+        margin: -100px 0 0 -120px;
+        height: calc(100vh + 48px);
+        padding: 125px 50px 50px 50px;
+        background: #000;
+        opacity: 0.9;
+        list-style-type: none;
+        display: none;
+    }
+
+    .burger-menu .burger-links li {
+        padding: 10px 100px;
+        font-size: 22px;
+    }
+
+    .burger-menu input:checked ~ .burger-links {
+        display: block;
+    }
+
+    .burger-menu input:checked ~ span {
+        background-color: #fff;
+    }
+
+    li a {
+        text-decoration: none;
+        font-family: 'Amatic SC', cursive;
+        font-size: 30px;
+        color: white;
+        font-style: normal;
+        font-weight: 100;
+        opacity: 0.4;
+    }
+
+    .logo {
+        grid-column: 1/4;
+        grid-row: 2/3;
+        margin-top: 30%;
+        margin-bottom: 5%;
+        max-width: 500px;
+        opacity: 0.9;
+        justify-self: center;
+        padding: 2%;
+    }
+
+    /*--------------------main-----------------------*/
+    h1 {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        font-family: 'Amatic SC', cursive;
+        font-size: 50px;
+        align-self: center;
+        text-align: center;
+    }
+
+
+
+    .menugrid {
+        grid-column: 1/6;
+        grid-row: 3/5;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5em;
+        justify-content: center;
+    }
+
+    .img-dishes {
+        padding: 3%;
+        grid-row: 1/2;
+        grid-column: 1/3;
+        height: 16em;
+    }
+
+
+
+    h2 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 25px;
+        text-align: center;
+        padding-bottom: 1%;
+    }
+
+    p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
+        text-align: center;
+        padding-bottom: 3%;
+    }
+
+    .price {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    button {
+        font-family: 'Montserrat', sans-serif;
+        border: solid 1px #7a7a7a;
+        text-align: center;
+        font-size: 14px;
+        font-weight: normal;
+        background-color: #7a7a7a;
+        border-radius: 40px;
+        margin: 0px 0px 20px 0px;
+        box-shadow: 2px 2px 5px #888888;
+        height: 40px;
+        width: 200px;
+        justify-self: center;
+    }
+
+
+    /*-------------------footer grid-----------*/
+    h3 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 3%;
+        padding-top: 3%;
+        color: white;
+    }
+
+    .p-footer {
+        padding-bottom: 3%;
+        font-size: 10px;
+        color: white;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Restaurant</title>
+</head>
+
+<body class="wrapper">
+    <header>
+        
+        <div class="logo">
+            <img src="./images/large/logo.svg" alt="logo">
+        </div>
+    </header>
+    <main>
+        <img class="leaves1" alt="leaves" src="./images/large/leaves2-03.svg">
+        <h1>Menu</h1>
+        <img class="leaves2" alt="leaves" src="./images/large/leaves-02.svg">
+        <nav>
+            <a herf="#" id="allLink">All</a>
+        </nav>
+        <div class="filters">
+            <h2>Filters Menu</h2>
+            <button class="button-filter">Discount</button>
+            <button class="button-filter">In Stock</button>
+            <button class="button-filter">Vegetarian</button>
+        </div>
+        
+        <div class="menugrid"></div>
+
+        <template id="dishTemplate">
+            <article class="dishes">
+                <p class="soldout hide">SOLD OUT <span></span></p>
+                <div class="discount hide">Discount</div>
+                <img class="img-dishes">
+                <div class="vegetarian hide"></div>
+                <h3>name</h3>
+                <p class="description">description</p>
+                <p class="price"> <span></span> Kr</p>
+                <button>Details</button>
+            </article>
+        </template>
+
+    </main>
+    <footer>
+        <h2>CONTACTS</h2>
+        <p class="p-footer">Ålholmvej 1, st 2500, Valby, København, Danmark</p>
+        <p class="p-footer">Phone : +45 28709566</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

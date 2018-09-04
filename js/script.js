@@ -7,22 +7,22 @@ const nav = document.querySelector("nav");
 
 const template = document.querySelector("#dishTemplate").content;
 
-allLink.addEventListener("click", ()=>filterBy("all"));
+allLink.addEventListener("click", () => filterBy("all"));
 
-fetch(catLink).then(promise=>promise.json()).then(data=>buildCategories(data));
+fetch(catLink).then(promise => promise.json()).then(data => buildCategories(data));
 
 
-function buildCategories(data){
-    data.forEach(category=>{
+function buildCategories(data) {
+    data.forEach(category => {
         //console.log(category);
         const newSection = document.createElement("section");
         const newH2 = document.createElement("h2");
         const newLink = document.createElement("a");
-        newLink.href="#";
-        newLink.textContent=category;
-        newLink.addEventListener("click", ()=>filterBy(category));
-        newSection.id=category;
-        newH2.textContent=category;
+        newLink.href = "#";
+        newLink.textContent = category;
+        newLink.addEventListener("click", () => filterBy(category));
+        newSection.id = category;
+        newH2.textContent = category;
         nav.appendChild(newLink);
         newSection.appendChild(newH2);
         main.appendChild(newSection);
@@ -30,11 +30,11 @@ function buildCategories(data){
     fetch(pListlink).then(promise => promise.json()).then(dataProduct => show(dataProduct));
 }
 
-function filterBy(category){
-    document.querySelectorAll("section").forEach(section=>{
-        if(section.id == category || category == "all"){
+function filterBy(category) {
+    document.querySelectorAll("section").forEach(section => {
+        if (section.id == category || category == "all") {
             section.classList.remove("hide");
-        }else{
+        } else {
             section.classList.add("hide");
         }
     })
@@ -44,13 +44,14 @@ function filterBy(category){
 function show(plist) {
     plist.forEach(product => {
         console.log(product.category);
-        const parent = document.querySelector("#"+product.category);
+        const parent = document.querySelector("#" + product.category);
         const clone = template.cloneNode(true);
 
 
 
         if (product.soldout) {
             clone.querySelector(".soldout").classList.remove("hide");
+            clone.querySelector(".dishes").classList.add("filter-soldout")
         }
 
         clone.querySelector(".price span").textContent = product.price;
@@ -66,6 +67,7 @@ function show(plist) {
 
         if (product.vegetarian) {
             clone.querySelector(".vegetarian").classList.remove("hide");
+            clone.querySelector(".dishes").classList.add("filter-vegetarian")
         }
 
         clone.querySelector("h3").textContent = product.name;
@@ -78,12 +80,36 @@ function show(plist) {
     });
 }
 
-document.querySelector("button.button-filter").addEventListener("click", ()=>{
+document.querySelector("button.sale-filter").addEventListener("click", () => {
     console.log("working")
-    document.querySelectorAll(".dishes").forEach(article=>{
-        if(!article.classList.contains('filter-discount')){
-            
+    document.querySelectorAll(".dishes").forEach(article => {
+        if (!article.classList.contains('filter-discount')) {
+
             article.classList.add("hide")
         }
     })
 })
+
+document.querySelector("button.filter-instock").addEventListener("click", () => {
+    console.log("working")
+    document.querySelectorAll(".dishes").forEach(article => {
+        if (!article.classList.contains('filter-soldout')) {
+
+        } else {
+            article.classList.add("hide")
+        }
+    })
+})
+
+document.querySelector("button.filter-veg").addEventListener("click", () => {
+    console.log("working")
+    document.querySelectorAll(".dishes").forEach(article => {
+        if (!article.classList.contains('filter-vegetarian')){
+
+           article.classList.add("hide")
+        }
+    })
+})
+
+//document.querySelector("button.clean-filter").addEventListener("click", () => filterBy("all"));
+    //console.log("working")

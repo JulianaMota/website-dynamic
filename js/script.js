@@ -4,6 +4,7 @@ const imgbase = "http://kea-alt-del.dk/t5/site/imgs/";
 const main = document.querySelector(".menugrid");
 const allLink = document.querySelector("#allLink");
 const nav = document.querySelector("nav");
+let counter = 0;
 
 const template = document.querySelector("#dishTemplate").content;
 
@@ -73,7 +74,11 @@ function show(plist) {
         clone.querySelector("h3").textContent = product.name;
         clone.querySelector(".description").textContent = product.shortdescription;
 
-
+        if (product.alcohol) {
+            clone.querySelector(".alcohol span").textContent = product.alcohol;
+            clone.querySelector(".alcohol").classList.remove("hide");
+            clone.querySelector(".dishes").classList.add("filter-alcohol")
+        }
 
         parent.appendChild(clone);
 
@@ -104,22 +109,43 @@ document.querySelector("button.filter-instock").addEventListener("click", () => 
 document.querySelector("button.filter-veg").addEventListener("click", () => {
     console.log("working")
     document.querySelectorAll(".dishes").forEach(article => {
-        if (!article.classList.contains('filter-vegetarian')){
+        if (!article.classList.contains('filter-vegetarian')) {
 
-           article.classList.add("hide")
+            article.classList.add("hide")
         }
     })
 })
 
 document.querySelector(".open-filters").addEventListener("click", () => {
     console.log("working")
-    document.querySelectorAll(".button-filter").forEach(button =>{
-        if (!button.classList.contains(".button-filter")){
-            
+    counter ++;
+    document.querySelectorAll(".button-filter").forEach(button => {
+        if (counter == 1 || !button.classList.contains(".button-filter")) {
+
             button.classList.remove("hide")
-        } else {
-            button.classList.add("hide")
+        } else if (counter = 2 || !button.classList.contains(".button-filter")) {
+            button.classList.add("hide");
+            counter = 0;
         }
     })
 });
-    
+
+document.querySelector("button.filter-alc").addEventListener("click", () => {
+    console.log("working")
+    document.querySelectorAll(".dishes").forEach(article => {
+        if (!article.classList.contains('filter-alcohol')) {
+
+            article.classList.add("hide")
+        }
+    })
+})
+
+document.querySelector("button.clear-filter").addEventListener("click", () => {
+    console.log("is working")
+    document.querySelectorAll(".dishes").forEach(article => {
+        if (!article.classList.contains('.dishes')) {
+
+            article.classList.remove("hide")
+        }
+    })
+})

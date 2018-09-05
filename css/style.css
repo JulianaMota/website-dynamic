@@ -98,7 +98,7 @@ h1 {
     grid-column: 3/4;
     grid-row: 1/2;
     font-family: 'Amatic SC', cursive;
-    font-size: 70px;
+    font-size: 65px;
     align-self: center;
     text-align: center;
 }
@@ -113,12 +113,13 @@ h1 {
 .filters {
     grid-column: 1/6;
     grid-row: 3/4;
-    background-color: gray;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin-top: 30px;
     margin-bottom: 50px;
+    grid-gap: 2px;
+    
 
 }
 
@@ -128,8 +129,18 @@ h1 {
     font-weight: normal;
     color: white;
     background-color: dimgray;
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px #C0C0C0;
+    
 
 }
+
+.filters .button-filter:focus{
+    background-color: #e0ad63;
+
+}
+
+
 
 button:hover {
     opacity: 0.7;
@@ -141,6 +152,15 @@ button:hover {
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
     text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px 5px #C0C0C0;
+    border-radius: 40px;
+    text-decoration: none;
+}
+
+.filters .open-filters:focus{
+    background-color: #e0ad63;
+
 }
 
 nav {
@@ -149,8 +169,10 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
-
+    box-shadow: 2px 2px 5px #606060;
     background-color: gray;
+    padding: 10px;
+    border-radius: 40px;
 }
 
 nav a {
@@ -161,7 +183,9 @@ nav a {
     color: white;
 }
 
-
+nav a:hover{
+    color: black;
+}
 
 section {
     display: grid;
@@ -175,7 +199,7 @@ section h2 {
     grid-column: 1/-1;
     grid-row: 1/2;
     font-family: 'Amatic SC', cursive;
-    font-size: 35px;
+    font-size: 40px;
     text-align: center;
     font-weight: bold;
     background-image: url(../images/large/leaves-categories-04.svg);

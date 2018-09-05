@@ -111,5 +111,15 @@ document.querySelector("button.filter-veg").addEventListener("click", () => {
     })
 })
 
-//document.querySelector("button.clean-filter").addEventListener("click", () => filterBy("all"));
-    //console.log("working")
+document.querySelector(".open-filters").addEventListener("click", () => {
+    console.log("working")
+    document.querySelectorAll(".button-filter").forEach(button =>{
+        if (!button.classList.contains(".button-filter")){
+            
+            button.classList.remove("hide")
+        } else {
+            button.classList.add("hide")
+        }
+    })
+});
+    

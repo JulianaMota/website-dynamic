@@ -13,7 +13,7 @@
 
 <body class="wrapper">
     <header>
-        
+
         <div class="logo">
             <img src="./images/large/logo.svg" alt="logo">
         </div>
@@ -28,13 +28,13 @@
         <div class="filters">
             <button class="open-filters">Filters Menu</button>
             <div class="filter-container hide"><button class="button-filter clear-filter">Clear</button>
-            <button class="button-filter sale-filter ">Discount</button>
-            <button class="button-filter filter-instock ">In Stock</button>
-            <button class="button-filter filter-veg ">Vegetarian</button>
-            <button class="button-filter filter-alc ">With Alcohol</button>
-                </div>
+                <button class="button-filter sale-filter ">Discount</button>
+                <button class="button-filter filter-instock ">In Stock</button>
+                <button class="button-filter filter-veg ">Vegetarian</button>
+                <button class="button-filter filter-alc ">With Alcohol</button>
+            </div>
         </div>
-        
+
         <div class="menugrid"></div>
 
         <template id="dishTemplate">
@@ -46,7 +46,7 @@
                 <h3>name</h3>
                 <p class="description">description</p>
                 <p class="alcohol hide">Alcohol: <span></span>% vol.</p>
-                <p class="price"> <span></span> Kr</p>
+                <p class="price"> <span></span> Dkk</p>
                 <button class="details-button">Details</button>
             </article>
         </template>
@@ -59,13 +59,31 @@
         <p class="p-footer">Ålholmvej 1, st 2500, Valby, København, Danmark</p>
         <p class="p-footer">Phone : +45 28709566</p>
     </footer>
-<div id="modal" class="hide">
-            <div id="modal-content">
-                <h2>NAME</h2>
-                <p>LONG DESCRIPTION</p>
-            </div>
+    <div id="modal" class="hide">
+        <div id="modal-content">
 
+            <img class="img-details">
+            <h2>NAME</h2>
+            <h3>CATEGORY</h3>
+            <div class="stars"><img alt=""  src="./images/large/star0-hand-drawn-symbol-outline-01.svg"></div>
+            <p class="short-des">SHORT DESCRIPTION</p>
+            <p class="long-des">LONG DESCRIPTION</p>
+
+            <ul>
+                <li class="region">Region: <span></span></li>
+                <li class="allergens hide">Contains: <span></span></li>
+
+
+
+                <li class="discount hide">Discount</li>
+                <li class="alcohol hide">Alcohol: <span></span>% vol.</li>
+                <li class="price"> <span></span>.-</li>
+            </ul>
+                <img class="vegetarian-modal" alt="veg" src="./images/large/vegetarian-mark.svg">
+                <div class="soldout-modal">SOLD OUT <span></span></div>
         </div>
+
+    </div>
     <script src="./js/script.js"></script>
 
 </body>

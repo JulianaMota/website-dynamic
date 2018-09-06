@@ -4,9 +4,7 @@
     margin: 0;
 }
 
-html{
-    scroll-behavior:smooth;
-}
+
 
 /*-----------------------------Desktop-----------------------------------------------------------------*/
 
@@ -123,7 +121,7 @@ h1 {
     margin-top: 30px;
     margin-bottom: 50px;
     grid-gap: 2px;
-    
+
 
 }
 
@@ -135,11 +133,11 @@ h1 {
     background-color: dimgray;
     border-radius: 40px;
     box-shadow: 2px 2px 5px #C0C0C0;
-    
+
 
 }
 
-.filters .button-filter:focus{
+.filters .button-filter:focus {
     background-color: #e0ad63;
 
 }
@@ -162,7 +160,7 @@ button:hover {
     text-decoration: none;
 }
 
-.filters .open-filters:focus{
+.filters .open-filters:focus {
     background-color: #e0ad63;
 
 }
@@ -187,17 +185,14 @@ nav a {
     color: white;
 }
 
-nav a:hover{
+nav a:hover {
     color: black;
 }
 
-nav a:any-link{
-    cursor: pointer;
-}
 
 section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30%, 40%));
+    grid-template-columns: repeat(auto-fill, minmax(20%, 35%));
     grid-gap: 5em;
     justify-content: center;
     margin-top: 80px;
@@ -212,7 +207,7 @@ section h2 {
     font-weight: bold;
     background-image: url(../images/large/leaves-categories-04.svg);
     background-position: center;
-    
+
 }
 
 .menugrid {
@@ -342,22 +337,128 @@ p {
     font-weight: bolder;
 }
 
-#modal{
+
+/*--------modal desktop---------*/
+
+#modal {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(250, 250, 250, .9);
     z-index: 200;
 }
 
-#modal-content{
-    background-color: beige;
-    width: 80vw;
-    margin: 10vw;
-    padding: 2em;
+#modal-content {
+    background-color: gainsboro;
+    width: 90vw;
+    margin: 5vw;
+    padding: 1em;
     z-index: 200;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 0px 50px 50px 0px;
+    box-shadow: 3px 3px 8px #888888;
+}
+
+.img-details {
+    grid-column: 1/2;
+    grid-row: 1/6;
+    align-self: center;
+}
+
+#modal-content h2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+#modal-content h3 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    text-align: right;
+    font-weight: 100;
+    align-self: flex-start;
+    padding-right: 2em;
+    align-self: center;
+}
+
+#modal-content .short-des {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-align: center;
+    font-weight: 100;
+
+}
+
+#modal-content .long-des {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: justify;
+    font-weight: 100;
+    padding: 0em 2em;
+    line-height: 1.5;
+}
+
+#modal-content div.stars {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 35%;
+
+
+}
+
+#modal-content ul {
+    grid-column: 2/3;
+    grid-row: 5/6;
+    padding-top: 2%;
+}
+
+#modal-content ul li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: justify;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+#modal-content ul li.price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: right;
+    padding-right: 2em;
+}
+
+#modal-content .vegetarian-modal {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 10%;
+    margin-left: 1em;
+}
+
+#modal-content .soldout-modal {
+    grid-column: 1/2;
+    grid-row: 1/8;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align-last: center;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20%;
+
 }
 
 /*-----------------------footer grid--------*/

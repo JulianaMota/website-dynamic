@@ -1,14 +1,24 @@
 const catLink = "http://kea-alt-del.dk/t5/api/categories";
 const pListlink = "http://kea-alt-del.dk/t5/api/productlist";
 const imgbase = "http://kea-alt-del.dk/t5/site/imgs/";
+
+const pLink = "http://kea-alt-del.dk/t5/api/product?id=";
+const modal = document.querySelector("#modal");
+
 const main = document.querySelector(".menugrid");
 const allLink = document.querySelector("#allLink");
 const nav = document.querySelector("nav");
-let counter = 0;
+
 
 const template = document.querySelector("#dishTemplate").content;
 
+
+//all botttun
+
 allLink.addEventListener("click", () => filterBy("all"));
+
+
+//create categories
 
 fetch(catLink).then(promise => promise.json()).then(data => buildCategories(data));
 
@@ -22,14 +32,19 @@ function buildCategories(data) {
         newLink.href = "#";
         newLink.textContent = category;
         newLink.addEventListener("click", () => filterBy(category));
+
         newSection.id = category;
         newH2.textContent = category;
         nav.appendChild(newLink);
         newSection.appendChild(newH2);
         main.appendChild(newSection);
+
     })
     fetch(pListlink).then(promise => promise.json()).then(dataProduct => show(dataProduct));
 }
+
+
+//Function Categoryes
 
 function filterBy(category) {
     document.querySelectorAll("section").forEach(section => {
@@ -40,6 +55,9 @@ function filterBy(category) {
         }
     })
 }
+
+
+// Product Clone
 
 
 function show(plist) {
@@ -79,11 +97,30 @@ function show(plist) {
             clone.querySelector(".alcohol").classList.remove("hide");
             clone.querySelector(".dishes").classList.add("filter-alcohol")
         }
+         clone.querySelector("button.details-button").addEventListener("click", () => fetch(pLink+product.id).then(promise => promise.json()).then(dataProduct =>showDetails(dataProduct)));
 
         parent.appendChild(clone);
 
     });
 }
+
+
+
+// modal function
+
+function showDetails(product){
+    console.log(product);
+    modal.querySelector("h2").textContent=product.name;
+    modal.querySelector("p").textContent=product.longdescription;
+    modal.classList.remove("hide");
+
+}
+
+modal.addEventListener("click", ()=>modal.classList.add("hide"));
+
+
+
+// discount filter
 
 document.querySelector("button.sale-filter").addEventListener("click", () => {
     console.log("working")
@@ -94,6 +131,10 @@ document.querySelector("button.sale-filter").addEventListener("click", () => {
         }
     })
 })
+
+
+
+// out sale filter
 
 document.querySelector("button.filter-instock").addEventListener("click", () => {
     console.log("working")
@@ -106,6 +147,10 @@ document.querySelector("button.filter-instock").addEventListener("click", () => 
     })
 })
 
+
+
+// vegetarian filter
+
 document.querySelector("button.filter-veg").addEventListener("click", () => {
     console.log("working")
     document.querySelectorAll(".dishes").forEach(article => {
@@ -116,18 +161,12 @@ document.querySelector("button.filter-veg").addEventListener("click", () => {
     })
 })
 
-document.querySelector(".open-filters").addEventListener("click", () => {
-    console.log("working")
-    counter ++;
-    document.querySelectorAll(".button-filter").forEach(button => {
-        if (counter == 1 || !button.classList.contains(".button-filter")) {
 
-            button.classList.remove("hide")
-        } else if (counter = 2 || !button.classList.contains(".button-filter")) {
-            button.classList.add("hide");
-            counter = 0;
-        }
-    })
+
+//open filter
+
+document.querySelector(".open-filters").addEventListener("click", () => {
+    document.querySelector(".filter-container").classList.toggle("hide")
 });
 
 document.querySelector("button.filter-alc").addEventListener("click", () => {
@@ -139,6 +178,10 @@ document.querySelector("button.filter-alc").addEventListener("click", () => {
         }
     })
 })
+
+
+
+//clear filter
 
 document.querySelector("button.clear-filter").addEventListener("click", () => {
     console.log("is working")

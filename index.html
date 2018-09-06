@@ -27,11 +27,12 @@
         </nav>
         <div class="filters">
             <button class="open-filters">Filters Menu</button>
-            <button class="button-filter clear-filter hide">Clear</button>
-            <button class="button-filter sale-filter hide">Discount</button>
-            <button class="button-filter filter-instock hide">In Stock</button>
-            <button class="button-filter filter-veg hide">Vegetarian</button>
-            <button class="button-filter filter-alc hide">With Alcohol</button>
+            <div class="filter-container hide"><button class="button-filter clear-filter">Clear</button>
+            <button class="button-filter sale-filter ">Discount</button>
+            <button class="button-filter filter-instock ">In Stock</button>
+            <button class="button-filter filter-veg ">Vegetarian</button>
+            <button class="button-filter filter-alc ">With Alcohol</button>
+                </div>
         </div>
         
         <div class="menugrid"></div>
@@ -46,9 +47,11 @@
                 <p class="description">description</p>
                 <p class="alcohol hide">Alcohol: <span></span>% vol.</p>
                 <p class="price"> <span></span> Kr</p>
-                <button>Details</button>
+                <button class="details-button">Details</button>
             </article>
         </template>
+
+
 
     </main>
     <footer>
@@ -56,7 +59,13 @@
         <p class="p-footer">Ålholmvej 1, st 2500, Valby, København, Danmark</p>
         <p class="p-footer">Phone : +45 28709566</p>
     </footer>
+<div id="modal" class="hide">
+            <div id="modal-content">
+                <h2>NAME</h2>
+                <p>LONG DESCRIPTION</p>
+            </div>
 
+        </div>
     <script src="./js/script.js"></script>
 
 </body>

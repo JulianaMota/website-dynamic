@@ -67,19 +67,19 @@ function show(plist) {
         const clone = template.cloneNode(true);
 
 
-// product list sold out
+        // product list sold out
         if (product.soldout) {
             clone.querySelector(".soldout").classList.remove("hide");
             clone.querySelector(".dishes").classList.add("filter-soldout")
         }
 
 
-// product price
+        // product price
 
         clone.querySelector(".price span").textContent = product.price;
 
 
-// product with discount
+        // product with discount
         if (product.discount) {
             const newPrice = Math.round(product.price - product.price * product.discount / 100);
             clone.querySelector(".price span").textContent = newPrice;
@@ -88,7 +88,7 @@ function show(plist) {
         }
 
 
- //product image
+        //product image
         clone.querySelector(".img-dishes").src = imgbase + "medium/" + product.image + "-md.jpg";
 
         if (product.vegetarian) {
@@ -96,15 +96,15 @@ function show(plist) {
             clone.querySelector(".dishes").classList.add("filter-vegetarian")
         }
 
-// product name
+        // product name
 
         clone.querySelector("h3").textContent = product.name;
 
 
-//procuct description
+        //procuct description
         clone.querySelector(".description").textContent = product.shortdescription;
 
-// products with alcohol
+        // products with alcohol
 
         if (product.alcohol) {
             clone.querySelector(".alcohol span").textContent = product.alcohol;
@@ -112,7 +112,7 @@ function show(plist) {
             clone.querySelector(".dishes").classList.add("filter-alcohol")
         }
 
-//Button for modal
+        //Button for modal
 
         clone.querySelector("button.details-button").addEventListener("click", () => fetch(pLink + product.id).then(promise => promise.json()).then(dataProduct => showDetails(dataProduct)));
 
@@ -130,53 +130,58 @@ function show(plist) {
 function showDetails(product) {
     console.log(product);
 
-//modal image
+    //modal image
     modal.querySelector(".img-details").src = imgbase + "large/" + product.image + ".jpg";
 
-//modal name
+    //modal name
     modal.querySelector("h2").textContent = product.name;
 
-//modal category
+    //modal category
     modal.querySelector("h3").textContent = product.category;
 
-//modal long description
-    if (product.longdescription.length == 0){
+    //modal long description
+    if (product.longdescription.length == 0) {
         console.log(product.longdescription.length)
 
         modal.querySelector("p.long-des").textContent = product.shortdescription;
 
-    }else {
+    } else {
         modal.querySelector("p.long-des").textContent = product.longdescription;
 
     }
 
-//modal region of product
-    modal.querySelector("li.region span").textContent = product.region;
+    //modal region of product
+    if (product.region.length > 0) {
+        modal.querySelector("li.region span").textContent = product.region;
+        modal.querySelector("li.region").classList.remove("hide");
+    } else {
+        modal.querySelector("li.region").classList.add("hide");
+    }
 
-//modal allergens to products
+    //modal allergens to products
     if (product.allergens.length > 0) {
         modal.querySelector("li.allergens span").textContent = product.allergens;
         modal.querySelector("li.allergens").classList.remove("hide");
-    }else{
+    } else {
         modal.querySelector("li.allergens").classList.add("hide");
     }
 
 
 
-//modal contain alcohol
+    //modal contain alcohol
     if (product.alcohol) {
         modal.querySelector("li.alcohol span").textContent = product.alcohol;
         modal.querySelector("li.alcohol").classList.remove("hide");
 
-    }else{
+    } else {
         modal.querySelector("li.alcohol").classList.add("hide");
     }
 
 
-//modal price
+    //modal price
     modal.querySelector("li.price-modal span").textContent = product.price;
 
-//modal vegetation modal
+    //modal vegetation modal
     if (product.vegetarian) {
         modal.querySelector(".vegetarian-modal").classList.remove("hide");
 
@@ -185,7 +190,7 @@ function showDetails(product) {
     }
 
 
- //modal sold out modal
+    //modal sold out modal
     if (product.soldout) {
         modal.querySelector(".soldout-modal").classList.remove("hide");
 
@@ -193,7 +198,7 @@ function showDetails(product) {
         modal.querySelector(".soldout-modal").classList.add("hide");
     }
 
-//modal discount
+    //modal discount
     if (product.discount) {
         const newPriceModal = Math.round(product.price - product.price * product.discount / 100);
         modal.querySelector(".price-modal span").textContent = newPriceModal;

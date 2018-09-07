@@ -46,8 +46,8 @@ a:hover {
 .logo {
     grid-column: 1/4;
     grid-row: 2/3;
-    margin-top: 10%;
-    margin-bottom: 0%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     max-width: 500px;
     opacity: 0.9;
     justify-self: center;
@@ -64,19 +64,19 @@ main {
     grid-area: main;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 150px auto auto;
+    grid-template-rows: 30px 200px auto auto;
     padding: 0% 5% 5% 5%;
 }
 
 .leaves1 {
     grid-column: 1/3;
-    grid-row: 1/2;
+    grid-row: 2/3;
     align-self: center;
 }
 
 h1 {
     grid-column: 3/4;
-    grid-row: 1/2;
+    grid-row: 2/3;
     font-family: 'Amatic SC', cursive;
     font-size: 65px;
     align-self: center;
@@ -85,7 +85,7 @@ h1 {
 
 .leaves2 {
     grid-column: 4/6;
-    grid-row: 1/2;
+    grid-row: 2/3;
     align-self: center;
 
 }
@@ -96,8 +96,8 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     grid-gap: 2px;
 }
 
@@ -144,7 +144,7 @@ button:hover {
 
 nav {
     grid-column: 1/-1;
-    grid-row: 2/3;
+    grid-row: 1/2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
@@ -152,6 +152,7 @@ nav {
     background-color: var(--buttons-bg-color);
     padding: 10px;
     border-radius: 40px;
+    margin-top: -30px;
 }
 
 nav a {
@@ -164,6 +165,16 @@ nav a {
 
 nav a:hover {
     color: black;
+}
+
+nav a:focus {
+    color: var(--button-focus-color);
+
+}
+
+nav a:focus {
+    color: var(--button-focus-color);
+
 }
 
 

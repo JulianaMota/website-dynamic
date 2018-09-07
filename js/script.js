@@ -29,7 +29,7 @@ function buildCategories(data) {
         const newSection = document.createElement("section");
         const newH2 = document.createElement("h2");
         const newLink = document.createElement("a");
-        newLink.href = "#Menu";
+        newLink.href = "#menu";
         newLink.textContent = category;
         newLink.addEventListener("click", () => filterBy(category));
 

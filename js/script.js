@@ -32,7 +32,6 @@ function buildCategories(data) {
         newLink.href = "#menu";
         newLink.textContent = category;
         newLink.addEventListener("click", () => filterBy(category));
-
         newSection.id = category;
         newH2.textContent = category;
         nav.appendChild(newLink);
@@ -292,3 +291,4 @@ document.querySelector("button.clear-filter").addEventListener("click", () => {
         }
     })
 })
+

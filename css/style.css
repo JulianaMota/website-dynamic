@@ -4,6 +4,13 @@
     margin: 0;
 }
 
+:root {
+    --box-bg-color: #dcdcdc;
+    --buttons-bg-color: #7a7a7a;
+    --text-color1: #ffffff;
+    --button-focus-color: #e0ad63;
+}
+
 
 
 /*-----------------------------Desktop-----------------------------------------------------------------*/
@@ -12,10 +19,6 @@
 
 .wrapper {
     display: grid;
-    background-image: url(../images/large/hisu-lee-86681-unsplash.jpg);
-    background-size: contain;
-    background-position: top;
-    background-repeat: no-repeat;
     grid-template-rows: auto auto auto;
     grid-template-areas: "header" "main" "footer";
 }
@@ -27,49 +30,24 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto max-content;
+    background-image: url(../images/large/hisu-lee-86681-unsplash_5096x1931.jpg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
 }
 
 
-.burger-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    padding-top: 1%;
-}
-
-
-
-li {
-    list-style-type: none;
-}
-
-li a {
-    text-decoration: none;
-    font-family: 'Amatic SC', cursive;
-    font-size: 50px;
-    color: white;
-    font-style: normal;
-    font-weight: 100;
-    opacity: 0.4;
-}
 
 a:hover {
     opacity: 1;
 }
 
-.current {
-    opacity: 0.9;
-}
-
-.burger-menu input {
-    display: none;
-}
 
 .logo {
     grid-column: 1/4;
     grid-row: 2/3;
     margin-top: 10%;
-    margin-bottom: 25%;
+    margin-bottom: 0%;
     max-width: 500px;
     opacity: 0.9;
     justify-self: center;
@@ -86,8 +64,8 @@ main {
     grid-area: main;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 200px auto auto;
-    padding: 5%;
+    grid-template-rows: 150px auto auto;
+    padding: 0% 5% 5% 5%;
 }
 
 .leaves1 {
@@ -116,29 +94,28 @@ h1 {
     grid-column: 1/6;
     grid-row: 3/4;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     margin-top: 30px;
     margin-bottom: 50px;
     grid-gap: 2px;
-
-
 }
+
+
 
 .filters .button-filter {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: normal;
-    color: white;
-    background-color: dimgray;
+    color: var(--text-color1);
+    background-color: var(--buttons-bg-color);
     border-radius: 40px;
     box-shadow: 2px 2px 5px #C0C0C0;
-
 
 }
 
 .filters .button-filter:focus {
-    background-color: #e0ad63;
+    background-color: var(--button-focus-color);
 
 }
 
@@ -161,7 +138,7 @@ button:hover {
 }
 
 .filters .open-filters:focus {
-    background-color: #e0ad63;
+    background-color: var(--button-focus-color);
 
 }
 
@@ -172,7 +149,7 @@ nav {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
     box-shadow: 2px 2px 5px #606060;
-    background-color: gray;
+    background-color: var(--buttons-bg-color);
     padding: 10px;
     border-radius: 40px;
 }
@@ -182,7 +159,7 @@ nav a {
     font-size: 30px;
     text-decoration: none;
     text-align: center;
-    color: white;
+    color: var(--text-color1);
 }
 
 nav a:hover {
@@ -210,6 +187,8 @@ section h2 {
 
 }
 
+
+
 .menugrid {
     grid-column: 1/-1;
     grid-row: 4/5;
@@ -217,8 +196,12 @@ section h2 {
 
 }
 
+
+
+/*-------------courses--------------*/
+
 .dishes {
-    background-color: gainsboro;
+    background-color: var(--box-bg-color);
     box-shadow: 3px 3px 10px #888888;
     border-radius: 0px 0px 50px 50px;
     display: grid;
@@ -255,7 +238,7 @@ section h2 {
 }
 
 
-h3 {
+.dishes h3 {
     grid-column: 1/3;
     grid-row: 2/3;
     font-family: 'Amatic SC', cursive;
@@ -302,12 +285,6 @@ p {
     padding-bottom: 3%;
 }
 
-.stars {
-    grid-column: 1/3;
-    max-width: 50%;
-    justify-self: center;
-    padding-bottom: 5%;
-}
 
 .price {
     grid-column: 1/3;
@@ -319,12 +296,12 @@ p {
 .dishes button {
     grid-column: 1/3;
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    color: var(--text-color1);
     border: solid 1px #7a7a7a;
     text-align: center;
     font-size: 18px;
     font-weight: normal;
-    background-color: #7a7a7a;
+    background-color: var(--buttons-bg-color);
     border-radius: 40px;
     margin: 0px 0px 20px 0px;
     box-shadow: 2px 2px 5px #888888;
@@ -340,6 +317,10 @@ p {
 
 /*--------modal desktop---------*/
 
+li {
+    list-style-type: none;
+}
+
 #modal {
     position: fixed;
     left: 0;
@@ -351,7 +332,7 @@ p {
 }
 
 #modal-content {
-    background-color: gainsboro;
+    background-color: var(--box-bg-color);
     width: 90vw;
     margin: 5vw;
     padding: 1em;
@@ -378,27 +359,24 @@ p {
     align-self: flex-end;
 }
 
+#modal-content .stars {
+    grid-column: 1/3;
+    max-width: 50%;
+    justify-self: center;
+    padding-bottom: 2%;
+}
+
 #modal-content h3 {
     grid-column: 2/3;
-    grid-row: 1/2;
+    grid-row: 3/4;
     font-family: 'Amatic SC', cursive;
     font-size: 25px;
-    text-align: right;
-    font-weight: 100;
-    align-self: flex-start;
-    padding-right: 2em;
-    align-self: center;
-}
-
-#modal-content .short-des {
-    grid-column: 2/3;
-    grid-row: 3/4;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
     text-align: center;
     font-weight: 100;
-
+    align-self: center;
+    padding-bottom: 2%;
 }
+
 
 #modal-content .long-des {
     grid-column: 2/3;
@@ -433,7 +411,7 @@ p {
     line-height: 1.8;
 }
 
-#modal-content ul li.price {
+#modal-content ul li.price-modal {
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
     font-weight: bolder;
@@ -461,6 +439,24 @@ p {
 
 }
 
+#modal-content .discount-modal {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgba(226, 73, 73);
+    background-repeat: no-repeat;
+    justify-self: flex-end;
+    align-self: flex-end;
+    padding: 2px;
+    height: 40px;
+    width: 130px;
+    margin: 20px 20px;
+}
+
 /*-----------------------footer grid--------*/
 
 footer {
@@ -476,7 +472,7 @@ footer h2 {
     text-align: center;
     padding-bottom: 1%;
     padding-top: 1%;
-    color: white;
+    color: var(--text-color1);
 }
 
 .p-footer {
@@ -491,74 +487,6 @@ footer h2 {
 @media all and (max-width:750px) {
 
     /*------------------header-------------------------*/
-    .burger-menu #menu-toggle {
-        position: fixed;
-        display: block;
-        top: 20px;
-        left: 20px;
-        z-index: 1;
-        user-select: none;
-    }
-
-    .burger-menu input {
-        display: block;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2;
-    }
-
-    .burger-menu span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        border: solid 1px #000;
-        background-color: gainsboro;
-        border-radius: 3px;
-        z-index: 1;
-    }
-
-    .burger-menu .burger-links {
-        position: absolute;
-        width: 280px;
-        margin: -100px 0 0 -120px;
-        height: calc(100vh + 48px);
-        padding: 125px 50px 50px 50px;
-        background: #000;
-        opacity: 0.9;
-        list-style-type: none;
-        display: none;
-    }
-
-    .burger-menu .burger-links li {
-        padding: 10px 100px;
-        font-size: 22px;
-    }
-
-    .burger-menu input:checked ~ .burger-links {
-        display: block;
-    }
-
-    .burger-menu input:checked ~ span {
-        background-color: #fff;
-    }
-
-    li a {
-        text-decoration: none;
-        font-family: 'Amatic SC', cursive;
-        font-size: 30px;
-        color: white;
-        font-style: normal;
-        font-weight: 100;
-        opacity: 0.4;
-    }
-
     .logo {
         grid-column: 1/4;
         grid-row: 2/3;
@@ -571,6 +499,15 @@ footer h2 {
     }
 
     /*--------------------main-----------------------*/
+    .filters .button-filter {
+        font-size: 14px;
+    }
+
+    .filters .open-filters {
+        font-size: 25px;
+    }
+
+
     h1 {
         grid-column: 3/4;
         grid-row: 1/2;
@@ -581,12 +518,17 @@ footer h2 {
     }
 
 
-
     section {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 5em;
         justify-content: center;
+
+    }
+
+    section h2 {
+        font-size: 30px;
+        background-repeat: no-repeat;
     }
 
     .img-dishes {
@@ -597,14 +539,14 @@ footer h2 {
 
 
 
-    h2 {
+    .dishes h3 {
         font-family: 'Amatic SC', cursive;
         font-size: 25px;
         text-align: center;
         padding-bottom: 1%;
     }
 
-    p {
+    .dishes p {
         font-family: 'Montserrat', sans-serif;
         font-size: 10px;
         text-align: center;
@@ -617,24 +559,27 @@ footer h2 {
         font-weight: bolder;
     }
 
-    button {
-        font-family: 'Montserrat', sans-serif;
-        border: solid 1px #7a7a7a;
-        text-align: center;
+    .vegetarian {
+        background-size: 20px;
+
+    }
+
+    .discount {
+        font-size: 20px;
+        height: 35px;
+        width: 110px;
+    }
+
+
+    .dishes button {
         font-size: 14px;
-        font-weight: normal;
-        background-color: #7a7a7a;
-        border-radius: 40px;
-        margin: 0px 0px 20px 0px;
-        box-shadow: 2px 2px 5px #888888;
         height: 40px;
         width: 200px;
-        justify-self: center;
     }
 
 
     /*-------------------footer grid-----------*/
-    h3 {
+    footer h3 {
         font-family: 'Amatic SC', cursive;
         font-size: 20px;
         text-align: center;

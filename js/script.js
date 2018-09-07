@@ -79,7 +79,7 @@ function show(plist) {
         clone.querySelector(".price span").textContent = product.price;
 
 
-// droduct with discount
+// product with discount
         if (product.discount) {
             const newPrice = Math.round(product.price - product.price * product.discount / 100);
             clone.querySelector(".price span").textContent = newPrice;
@@ -130,45 +130,53 @@ function show(plist) {
 function showDetails(product) {
     console.log(product);
 
-//image
+//modal image
     modal.querySelector(".img-details").src = imgbase + "large/" + product.image + ".jpg";
 
-//name
+//modal name
     modal.querySelector("h2").textContent = product.name;
 
-//category
+//modal category
     modal.querySelector("h3").textContent = product.category;
 
-//short description
-    modal.querySelector("p.short-des").textContent = product.shortdescription;
+//modal long description
+    if (product.longdescription.length == 0){
+        console.log(product.longdescription.length)
 
-//long description
-    modal.querySelector("p.long-des").textContent = product.longdescription;
+        modal.querySelector("p.long-des").textContent = product.shortdescription;
 
+    }else {
+        modal.querySelector("p.long-des").textContent = product.longdescription;
 
-//region of product
+    }
+
+//modal region of product
     modal.querySelector("li.region span").textContent = product.region;
 
-//allergens to products
-    if (product.allergens) {
+//modal allergens to products
+    if (product.allergens.length > 0) {
         modal.querySelector("li.allergens span").textContent = product.allergens;
-
         modal.querySelector("li.allergens").classList.remove("hide");
+    }else{
+        modal.querySelector("li.allergens").classList.add("hide");
     }
 
 
-// contain alcohol
+
+//modal contain alcohol
     if (product.alcohol) {
         modal.querySelector("li.alcohol span").textContent = product.alcohol;
         modal.querySelector("li.alcohol").classList.remove("hide");
 
+    }else{
+        modal.querySelector("li.alcohol").classList.add("hide");
     }
 
 
-//price
-    modal.querySelector("li.price span").textContent = product.price;
+//modal price
+    modal.querySelector("li.price-modal span").textContent = product.price;
 
-//vegetation modal
+//modal vegetation modal
     if (product.vegetarian) {
         modal.querySelector(".vegetarian-modal").classList.remove("hide");
 
@@ -177,7 +185,7 @@ function showDetails(product) {
     }
 
 
- //sold out modal
+ //modal sold out modal
     if (product.soldout) {
         modal.querySelector(".soldout-modal").classList.remove("hide");
 
@@ -185,6 +193,16 @@ function showDetails(product) {
         modal.querySelector(".soldout-modal").classList.add("hide");
     }
 
+//modal discount
+    if (product.discount) {
+        const newPriceModal = Math.round(product.price - product.price * product.discount / 100);
+        modal.querySelector(".price-modal span").textContent = newPriceModal;
+
+        modal.querySelector(".discount-modal").classList.remove("hide");
+
+    } else {
+        modal.querySelector(".discount-modal").classList.add("hide");
+    }
 
 
     modal.classList.remove("hide");
